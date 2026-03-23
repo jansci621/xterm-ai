@@ -36,6 +36,10 @@ npm link
 ### 从安装包安装
 
 ```bash
+# 创建安装包
+npm pack
+
+# 安装
 npm install -g xterm-ai-0.1.0.tgz
 ```
 

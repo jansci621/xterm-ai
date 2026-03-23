@@ -39,6 +39,12 @@ npm link
 npm install -g xterm-ai-0.1.0.tgz
 ```
 
+> **Note**: You can also create a tarball using `npm pack`:
+```bash
+npm pack
+npm install -g xterm-ai-0.1.0.tgz
+```
+
 ---
 
 ## Quick Start
