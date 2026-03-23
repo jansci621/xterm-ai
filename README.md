@@ -1,4 +1,4 @@
-# xTerm
+# xTerm-AI
 
 Terminal workspace for launching and managing AI CLIs (Claude, Codex, etc.).
 
@@ -27,7 +27,7 @@ npm install -g xterm-ai
 
 ```bash
 git clone https://github.com/jansci621/xterm-ai.git
-cd xterm
+cd xterm-ai
 npm install
 npm run build
 npm link
@@ -98,8 +98,8 @@ xterm-ai run claude --profile qianfan
 
  ─────────────────────────────────────────────────────────────────────────────────
 
-   ▶ Zhipu GLM (current)
-     Qianfan
+   ▶ Qianfan (current)
+     Claude Native
 
  ─────────────────────────────────────────────────────────────────────────────────
 
@@ -138,10 +138,6 @@ On first run, xterm-ai creates `~/.xterm-ai/config.json` with pre-configured pro
       "label": "Claude Native",
       "settingsPath": "~/.claude/settings-native.json"
     },
-    "zhipu-glm": {
-      "label": "Zhipu GLM",
-      "settingsPath": "~/.claude/settings-glm.json"
-    },
     "qianfan": {
       "label": "Qianfan",
       "settingsPath": "~/.claude/settings-qianfan.json"
@@ -158,7 +154,7 @@ On first run, xterm-ai creates `~/.xterm-ai/config.json` with pre-configured pro
       "label": "Claude CLI",
       "command": "claude",
       "settingsArg": "--settings",
-      "allowedProfiles": ["qianfan", "zhipu-glm"]
+      "allowedProfiles": ["qianfan"]
     },
     "codex": {
       "label": "Codex CLI",
@@ -206,17 +202,6 @@ Create settings files for each profile in `~/.claude/`:
     "ANTHROPIC_API_KEY": "your-qianfan-api-key",
     "ANTHROPIC_BASE_URL": "https://qianfan.baidubce.com/anthropic",
     "ANTHROPIC_MODEL": "qianfan-code-latest"
-  }
-}
-```
-
-**Zhipu GLM (settings-glm.json):**
-```json
-{
-  "env": {
-    "ANTHROPIC_API_KEY": "your-zhipu-api-key",
-    "ANTHROPIC_BASE_URL": "https://open.bigmodel.cn/api/anthropic",
-    "ANTHROPIC_MODEL": "glm-5"
   }
 }
 ```

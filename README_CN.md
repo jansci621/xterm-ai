@@ -1,4 +1,4 @@
-# xTerm
+# xTerm-AI
 
 终端工作台，用于启动和管理多个 AI CLI 工具（Claude, Codex 等）。
 
@@ -27,7 +27,7 @@ npm install -g xterm-ai
 
 ```bash
 git clone https://github.com/jansci621/xterm-ai.git
-cd xterm
+cd xterm-ai
 npm install
 npm run build
 npm link
@@ -98,8 +98,8 @@ xterm-ai run claude --profile qianfan
 
  ─────────────────────────────────────────────────────────────────────────────────
 
-   ▶ 智谱 GLM (current)
-     千帆
+   ▶ 千帆 (current)
+     Claude 原生
 
  ─────────────────────────────────────────────────────────────────────────────────
 
@@ -138,10 +138,6 @@ xterm-ai run claude --profile qianfan
       "label": "Claude 原生",
       "settingsPath": "~/.claude/settings-native.json"
     },
-    "zhipu-glm": {
-      "label": "智谱 GLM",
-      "settingsPath": "~/.claude/settings-glm.json"
-    },
     "qianfan": {
       "label": "千帆",
       "settingsPath": "~/.claude/settings-qianfan.json"
@@ -158,7 +154,7 @@ xterm-ai run claude --profile qianfan
       "label": "Claude CLI",
       "command": "claude",
       "settingsArg": "--settings",
-      "allowedProfiles": ["qianfan", "zhipu-glm"]
+      "allowedProfiles": ["qianfan"]
     },
     "codex": {
       "label": "Codex CLI",
@@ -206,17 +202,6 @@ xterm-ai run claude --profile qianfan
     "ANTHROPIC_API_KEY": "your-qianfan-api-key",
     "ANTHROPIC_BASE_URL": "https://qianfan.baidubce.com/anthropic",
     "ANTHROPIC_MODEL": "qianfan-code-latest"
-  }
-}
-```
-
-**智谱 GLM (settings-glm.json):**
-```json
-{
-  "env": {
-    "ANTHROPIC_API_KEY": "your-zhipu-api-key",
-    "ANTHROPIC_BASE_URL": "https://open.bigmodel.cn/api/anthropic",
-    "ANTHROPIC_MODEL": "glm-5"
   }
 }
 ```

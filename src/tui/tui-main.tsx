@@ -53,10 +53,6 @@ export async function startTui(workspacePath: string): Promise<void> {
             label: 'Claude Native',
             settingsPath: '~/.claude/settings-native.json',
           },
-          'zhipu-glm': {
-            label: 'Zhipu GLM',
-            settingsPath: '~/.claude/settings-glm.json',
-          },
           'qianfan': {
             label: 'Qianfan',
             settingsPath: '~/.claude/settings-qianfan.json',
@@ -73,7 +69,7 @@ export async function startTui(workspacePath: string): Promise<void> {
             label: 'Claude CLI',
             command: 'claude',
             settingsArg: '--settings',
-            allowedProfiles: ['qianfan', 'zhipu-glm'],
+            allowedProfiles: ['qianfan'],
           },
           'codex': {
             label: 'Codex CLI',

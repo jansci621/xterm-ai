@@ -13,7 +13,7 @@ program
   .description('Terminal workspace for launching AI CLIs')
   .version('0.1.0')
 
-// ── xterm run [tool] ───────────────────────────────────────────────────────
+// ── xterm-ai run [tool] ───────────────────────────────────────────────────────
 program
   .command('run [tool]')
   .description('Launch an AI CLI in the current workspace')
@@ -24,7 +24,7 @@ program
     })
   })
 
-// ── xterm (no subcommand) → open TUI ──────────────────────────────────────
+// ── xterm-ai (no subcommand) → open TUI ──────────────────────────────────────
 // The TUI owns its own config loading and handles MISSING_CONFIG internally.
 program.action(async () => {
   try {

@@ -77,7 +77,7 @@ export function App({ initialState }: AppProps) {
 
     // Note: after exit() the TUI is unmounted; to return to the TUI we would
     // need to re-render here. For now, the process exits — the user runs
-    // `xterm` again to relaunch.
+    // `xterm-ai` again to relaunch.
   }, [state.resolvedSelection, state.workspacePath])
 
   // ── Tool picker ────────────────────────────────────────────────────────────
@@ -183,7 +183,6 @@ export function App({ initialState }: AppProps) {
           </Text>
           <Text color={colors.muted}>  • settings-native.json (Claude Native)</Text>
           <Text color={colors.muted}>  • settings-qianfan.json (Qianfan)</Text>
-          <Text color={colors.muted}>  • settings-glm.json (Zhipu GLM)</Text>
           <Text color={colors.muted}>Then run xterm-ai again.</Text>
         </Box>
         <Box marginY={1}>

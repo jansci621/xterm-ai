@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jansci621/xterm-ai-ai.git"
+    "url": "git+https://github.com/jansci621/xterm-ai.git"
   },
   "bugs": {
     "url": "https://github.com/jansci621/xterm-ai/issues"
@@ -50,11 +50,6 @@
     "codex",
     "terminal",
     "workspace",
-    "xterm"
-  ],
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/yourusername/xterm.git"
-  }
+    "xterm-ai"
+  ]
 }
