@@ -61,7 +61,7 @@ xterm-ai run claude --profile qianfan
 ### Home
 
 ```
- xTerm                                                                        Home
+ xTerm-AI                                                                     Home
 
  Workspace ~/project/demo                                              Last never
 
@@ -78,7 +78,7 @@ xterm-ai run claude --profile qianfan
 ### Tool Picker
 
 ```
- xTerm                                                                   Tool Picker
+ xTerm-AI                                                              Tool Picker
 
  ─────────────────────────────────────────────────────────────────────────────────
 
@@ -94,7 +94,7 @@ xterm-ai run claude --profile qianfan
 ### Profile Picker
 
 ```
- xTerm                                                                 Profile Picker
+ xTerm-AI                                                            Profile Picker
 
  ─────────────────────────────────────────────────────────────────────────────────
 
@@ -109,7 +109,7 @@ xterm-ai run claude --profile qianfan
 ### Launching
 
 ```
- xTerm                                                                    Launching
+ xTerm-AI                                                                 Launching
 
  Workspace ~/project/demo
 
@@ -125,7 +125,7 @@ xterm-ai run claude --profile qianfan
 ### Setup (First Run)
 
 ```
- xTerm                                                                  Setup Required
+ xTerm-AI                                                              Setup Required
 
  ─────────────────────────────────────────────────────────────────────────────────
 
