@@ -115,7 +115,6 @@ xterm-ai run claude --profile qianfan
 
  ─────────────────────────────────────────────────────────────────────────────────
 
- Command     claude
  Tool        Claude CLI
  Profile     Qianfan
 
