@@ -20,13 +20,13 @@
 ### 从 npm 安装（推荐）
 
 ```bash
-npm install -g xterm
+npm install -g xterm-ai
 ```
 
 ### 从源码安装
 
 ```bash
-git clone https://github.com/yourusername/xterm.git
+git clone https://github.com/jansci621/xterm-ai.git
 cd xterm
 npm install
 npm run build
@@ -36,7 +36,7 @@ npm link
 ### 从安装包安装
 
 ```bash
-npm install -g xterm-0.1.0.tgz
+npm install -g xterm-ai-0.1.0.tgz
 ```
 
 ---
@@ -45,12 +45,14 @@ npm install -g xterm-0.1.0.tgz
 
 ```bash
 # 打开 TUI（自动恢复当前目录的上次会话）
-xterm
+xterm-ai
 
 # 直接启动指定工具
-xterm run claude
-xterm run claude --profile qianfan
+xterm-ai run claude
+xterm-ai run claude --profile qianfan
 ```
+
+> **注意**: 首次运行时，xterm-ai 会创建 `~/.xterm-ai/config.json` 配置文件。你需要在 `~/.claude/` 目录下创建 settings 文件并填入 API Key（参见 [Settings 文件](#settings-文件)）。
 
 ---
 
@@ -80,7 +82,7 @@ xterm run claude --profile qianfan
 
  ─────────────────────────────────────────────────────────────────────────────────
 
-   ▶ Claude 原生 — claude
+   ▶ Claude 原生 — claude-native
      Claude CLI — claude (current)
      Codex CLI — codex
 
@@ -124,7 +126,7 @@ xterm run claude --profile qianfan
 
 ## 配置
 
-首次运行时，xterm 会在 `~/.xterm/config.json` 创建初始配置文件。
+首次运行时，xterm-ai 会创建 `~/.xterm-ai/config.json` 配置文件，预置常用厂商配置。你需要创建对应的 settings 文件并填入 API Key。
 
 ### 完整示例
 
@@ -236,10 +238,10 @@ xterm run claude --profile qianfan
 
 ## 工作原理
 
-- 会话按工作区存储在 `~/.xterm/sessions.json`
+- 会话按工作区存储在 `~/.xterm-ai/sessions.json`
 - 打开工作区时自动恢复上次的工具和配置
 - settings 文件通过 `--settings` 参数传递给 CLI
-- 对话历史保留在外部工具中，xterm 仅管理启动元数据
+- 对话历史保留在外部工具中，xterm-ai 仅管理启动元数据
 
 ---
 

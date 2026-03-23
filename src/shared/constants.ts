@@ -1,7 +1,7 @@
 import { homedir } from 'node:os'
 import { join } from 'node:path'
 
-export const XTERM_DIR = join(homedir(), '.xterm')
+export const XTERM_DIR = join(homedir(), '.xterm-ai')
 export const CONFIG_FILE = join(XTERM_DIR, 'config.json')
 export const SESSIONS_FILE = join(XTERM_DIR, 'sessions.json')
 

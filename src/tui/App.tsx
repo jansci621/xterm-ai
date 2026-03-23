@@ -173,12 +173,18 @@ export function App({ initialState }: AppProps) {
           <Text color={colors.border}>{'─'.repeat(72)}</Text>
         </Box>
         <Box flexDirection="column" gap={1}>
-          <Text color={colors.warning}>No configuration found.</Text>
+          <Text color={colors.warning}>Configuration created.</Text>
           <Text color={colors.muted}>
             A starter config has been written to{' '}
-            <Text color={colors.text}>~/.xterm/config.json</Text>
+            <Text color={colors.text}>~/.xterm-ai/config.json</Text>
           </Text>
-          <Text color={colors.muted}>Edit it to add your tools and profiles, then run xterm again.</Text>
+          <Text color={colors.muted}>
+            Create settings files in <Text color={colors.text}>~/.claude/</Text> with your API keys:
+          </Text>
+          <Text color={colors.muted}>  • settings-native.json (Claude Native)</Text>
+          <Text color={colors.muted}>  • settings-qianfan.json (Qianfan)</Text>
+          <Text color={colors.muted}>  • settings-glm.json (Zhipu GLM)</Text>
+          <Text color={colors.muted}>Then run xterm-ai again.</Text>
         </Box>
         <Box marginY={1}>
           <Text color={colors.border}>{'─'.repeat(72)}</Text>

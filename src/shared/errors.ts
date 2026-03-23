@@ -35,7 +35,7 @@ export class ProfileNotFoundError extends XtermError {
 export class NoToolsConfiguredError extends XtermError {
   constructor() {
     super(
-      'No tools configured. Add at least one tool to ~/.xterm/config.json',
+      'No tools configured. Add at least one tool to ~/.xterm-ai/config.json',
       'NO_TOOLS',
     )
   }

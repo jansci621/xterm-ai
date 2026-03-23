@@ -42,7 +42,7 @@ export async function runCommand(
   if (result.exitCode !== 0) {
     process.stderr.write(
       `\n ${selection.tool.command} exited with code ${result.exitCode}\n` +
-        ` Session saved. Run 'xterm run' to relaunch.\n\n`,
+        ` Session saved. Run 'xterm-ai run' to relaunch.\n\n`,
     )
     process.exit(result.exitCode)
   }

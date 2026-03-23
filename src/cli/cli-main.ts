@@ -9,7 +9,7 @@ import { runCommand } from './commands/run-command.js'
 const program = new Command()
 
 program
-  .name('xterm')
+  .name('xterm-ai')
   .description('Terminal workspace for launching AI CLIs')
   .version('0.1.0')
 
@@ -51,7 +51,7 @@ async function withConfig(
     if (err instanceof ConfigNotFoundError) {
       process.stderr.write(
         `\n No config found at ${CONFIG_FILE}\n` +
-          ` Create ~/.xterm/config.json to get started.\n` +
+          ` Create ~/.xterm-ai/config.json to get started.\n` +
           ` See the docs for the config format.\n\n`,
       )
       process.exit(1)

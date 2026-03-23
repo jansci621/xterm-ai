@@ -45,8 +45,42 @@ export async function startTui(workspacePath: string): Promise<void> {
     }
   } catch (err) {
     if (err instanceof ConfigNotFoundError) {
-      // Write starter config and show setup screen
-      const starterConfig: GlobalConfig = { version: 1, profiles: {}, tools: {} }
+      // Write starter config with common vendor templates
+      const starterConfig: GlobalConfig = {
+        version: 1,
+        profiles: {
+          'claude-native': {
+            label: 'Claude Native',
+            settingsPath: '~/.claude/settings-native.json',
+          },
+          'zhipu-glm': {
+            label: 'Zhipu GLM',
+            settingsPath: '~/.claude/settings-glm.json',
+          },
+          'qianfan': {
+            label: 'Qianfan',
+            settingsPath: '~/.claude/settings-qianfan.json',
+          },
+        },
+        tools: {
+          'claude-native': {
+            label: 'Claude Native',
+            command: 'claude',
+            settingsArg: '--settings',
+            allowedProfiles: ['claude-native'],
+          },
+          'claude': {
+            label: 'Claude CLI',
+            command: 'claude',
+            settingsArg: '--settings',
+            allowedProfiles: ['qianfan', 'zhipu-glm'],
+          },
+          'codex': {
+            label: 'Codex CLI',
+            command: 'codex',
+          },
+        },
+      }
       await writeStarterConfig(starterConfig)
 
       state = {

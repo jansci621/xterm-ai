@@ -20,13 +20,13 @@ Terminal workspace for launching and managing AI CLIs (Claude, Codex, etc.).
 ### From npm (recommended)
 
 ```bash
-npm install -g xterm
+npm install -g xterm-ai
 ```
 
 ### From source
 
 ```bash
-git clone https://github.com/yourusername/xterm.git
+git clone https://github.com/jansci621/xterm-ai.git
 cd xterm
 npm install
 npm run build
@@ -36,7 +36,7 @@ npm link
 ### From tarball
 
 ```bash
-npm install -g xterm-0.1.0.tgz
+npm install -g xterm-ai-0.1.0.tgz
 ```
 
 ---
@@ -45,12 +45,14 @@ npm install -g xterm-0.1.0.tgz
 
 ```bash
 # Open TUI (auto-resumes last session for current directory)
-xterm
+xterm-ai
 
 # Launch a specific tool directly
-xterm run claude
-xterm run claude --profile qianfan
+xterm-ai run claude
+xterm-ai run claude --profile qianfan
 ```
+
+> **Note**: On first run, xterm-ai creates `~/.xterm-ai/config.json` with pre-configured profiles. You need to create settings files in `~/.claude/` with your API keys (see [Settings Files](#settings-files)).
 
 ---
 
@@ -80,7 +82,7 @@ xterm run claude --profile qianfan
 
  ─────────────────────────────────────────────────────────────────────────────────
 
-   ▶ Claude 原生 — claude
+   ▶ Claude Native — claude-native
      Claude CLI — claude (current)
      Codex CLI — codex
 
@@ -96,8 +98,8 @@ xterm run claude --profile qianfan
 
  ─────────────────────────────────────────────────────────────────────────────────
 
-   ▶ 智谱 GLM (current)
-     千帆
+   ▶ Zhipu GLM (current)
+     Qianfan
 
  ─────────────────────────────────────────────────────────────────────────────────
 
@@ -115,7 +117,7 @@ xterm run claude --profile qianfan
 
  Command     claude
  Tool        Claude CLI
- Profile     千帆
+ Profile     Qianfan
 
  Handing off terminal control…
 ```
@@ -124,7 +126,7 @@ xterm run claude --profile qianfan
 
 ## Configuration
 
-On first run, xterm writes a starter config to `~/.xterm/config.json`.
+On first run, xterm-ai creates `~/.xterm-ai/config.json` with pre-configured profiles for common vendors. You need to create the corresponding settings files with your API keys.
 
 ### Complete Example
 
@@ -236,10 +238,10 @@ Create settings files for each profile in `~/.claude/`:
 
 ## How It Works
 
-- Sessions are stored per workspace in `~/.xterm/sessions.json`
-- When you open a workspace, xterm auto-resumes the last tool + profile
+- Sessions are stored per workspace in `~/.xterm-ai/sessions.json`
+- When you open a workspace, xterm-ai auto-resumes the last tool + profile
 - Settings files are passed via `--settings` argument to the CLI
-- Conversation history stays in the external tool — xterm only manages launch metadata
+- Conversation history stays in the external tool — xterm-ai only manages launch metadata
 
 ---
 
