@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "profiles": {
+    "claude-native": {
+      "label": "Claude Native",
+      "settingsPath": "~/.claude/settings.json"
+    },
+    "qianfan": {
+      "label": "千帆",
+      "settingsPath": "~/.claude/settings-qianfan.json"
+    },
+    "zhipu-glm": {
+      "label": "智谱 GLM",
+      "settingsPath": "~/.claude/settings-glm.json"
+    },
+    "openai-main": {
+      "label": "OpenAI Main",
+      "settingsPath": "~/.claude/settings-openai.json"
+    }
+  },
+  "tools": {
+    "claude-native": {
+      "label": "Claude-Native CLI",
+      "command": "claude",
+      "settingsArg": "--settings",
+      "allowedProfiles": ["qianfan", "zhipu-glm"]
+    },
+    "claude": {
+      "label": "Claude CLI",
+      "command": "claude",
+      "settingsArg": "--settings",
+      "allowedProfiles": ["qianfan", "zhipu-glm"]
+    },
+    "codex": {
+      "label": "Codex CLI",
+      "command": "codex",
+      "allowedProfiles": ["openai-main"]
+    }
+  }
+}

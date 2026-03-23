@@ -1,0 +1,255 @@
+# xTerm
+
+Terminal workspace for launching and managing AI CLIs (Claude, Codex, etc.).
+
+[中文文档](README_CN.md)
+
+---
+
+## Features
+
+- 🚀 Quick switch between multiple AI tools and profiles
+- 📁 Per-workspace session persistence
+- ⚙️ Settings file support for each profile
+- 🎯 Tool-specific profile restrictions
+
+---
+
+## Install
+
+### From npm (recommended)
+
+```bash
+npm install -g xterm
+```
+
+### From source
+
+```bash
+git clone https://github.com/yourusername/xterm.git
+cd xterm
+npm install
+npm run build
+npm link
+```
+
+### From tarball
+
+```bash
+npm install -g xterm-0.1.0.tgz
+```
+
+---
+
+## Quick Start
+
+```bash
+# Open TUI (auto-resumes last session for current directory)
+xterm
+
+# Launch a specific tool directly
+xterm run claude
+xterm run claude --profile qianfan
+```
+
+---
+
+## Interface
+
+### Home
+
+```
+ xTerm                                                                        Home
+
+ Workspace ~/project/demo                                              Last never
+
+ ─────────────────────────────────────────────────────────────────────────────────
+
+ Tool       Claude CLI                   ok installed  · restored
+ Profile    千帆                           · explicit
+
+ ─────────────────────────────────────────────────────────────────────────────────
+
+ [Enter] Launch   [t] Tool   [p] Profile   [q] Quit
+```
+
+### Tool Picker
+
+```
+ xTerm                                                                   Tool Picker
+
+ ─────────────────────────────────────────────────────────────────────────────────
+
+   ▶ Claude 原生 — claude
+     Claude CLI — claude (current)
+     Codex CLI — codex
+
+ ─────────────────────────────────────────────────────────────────────────────────
+
+ [Enter] Select   [↑↓] Navigate   [Esc] Cancel
+```
+
+### Profile Picker
+
+```
+ xTerm                                                                 Profile Picker
+
+ ─────────────────────────────────────────────────────────────────────────────────
+
+   ▶ 智谱 GLM (current)
+     千帆
+
+ ─────────────────────────────────────────────────────────────────────────────────
+
+ [Enter] Select   [↑↓] Navigate   [Esc] Cancel
+```
+
+### Launching
+
+```
+ xTerm                                                                    Launching
+
+ Workspace ~/project/demo
+
+ ─────────────────────────────────────────────────────────────────────────────────
+
+ Command     claude
+ Tool        Claude CLI
+ Profile     千帆
+
+ Handing off terminal control…
+```
+
+---
+
+## Configuration
+
+On first run, xterm writes a starter config to `~/.xterm/config.json`.
+
+### Complete Example
+
+```json
+{
+  "version": 1,
+  "profiles": {
+    "claude-native": {
+      "label": "Claude Native",
+      "settingsPath": "~/.claude/settings-native.json"
+    },
+    "zhipu-glm": {
+      "label": "Zhipu GLM",
+      "settingsPath": "~/.claude/settings-glm.json"
+    },
+    "qianfan": {
+      "label": "Qianfan",
+      "settingsPath": "~/.claude/settings-qianfan.json"
+    }
+  },
+  "tools": {
+    "claude-native": {
+      "label": "Claude Native",
+      "command": "claude",
+      "settingsArg": "--settings",
+      "allowedProfiles": ["claude-native"]
+    },
+    "claude": {
+      "label": "Claude CLI",
+      "command": "claude",
+      "settingsArg": "--settings",
+      "allowedProfiles": ["qianfan", "zhipu-glm"]
+    },
+    "codex": {
+      "label": "Codex CLI",
+      "command": "codex"
+    }
+  }
+}
+```
+
+### Profile Configuration
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `label` | string | Display name in TUI |
+| `settingsPath` | string | Path to settings file |
+
+### Tool Configuration
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `label` | string | Display name in TUI |
+| `command` | string | CLI command to execute |
+| `args` | string[] | Additional arguments |
+| `settingsArg` | string | Argument name for settings file (e.g., `--settings`) |
+| `defaultProfile` | string | Default profile ID |
+| `allowedProfiles` | string[] | Allowed profile IDs. Empty or not set = profile disabled |
+
+### Settings Files
+
+Create settings files for each profile in `~/.claude/`:
+
+**Native Claude (settings-native.json):**
+```json
+{
+  "permissions": {
+    "allow": ["Bash(find:*)"]
+  }
+}
+```
+
+**Qianfan (settings-qianfan.json):**
+```json
+{
+  "env": {
+    "ANTHROPIC_API_KEY": "your-qianfan-api-key",
+    "ANTHROPIC_BASE_URL": "https://qianfan.baidubce.com/anthropic",
+    "ANTHROPIC_MODEL": "qianfan-code-latest"
+  }
+}
+```
+
+**Zhipu GLM (settings-glm.json):**
+```json
+{
+  "env": {
+    "ANTHROPIC_API_KEY": "your-zhipu-api-key",
+    "ANTHROPIC_BASE_URL": "https://open.bigmodel.cn/api/anthropic",
+    "ANTHROPIC_MODEL": "glm-5"
+  }
+}
+```
+
+---
+
+## TUI Shortcuts
+
+| Key | Action |
+|-----|--------|
+| `Enter` | Launch tool |
+| `t` | Switch tool |
+| `p` | Switch profile |
+| `q` | Quit |
+| `↑↓` | Navigate picker |
+| `Esc` | Close picker |
+
+---
+
+## How It Works
+
+- Sessions are stored per workspace in `~/.xterm/sessions.json`
+- When you open a workspace, xterm auto-resumes the last tool + profile
+- Settings files are passed via `--settings` argument to the CLI
+- Conversation history stays in the external tool — xterm only manages launch metadata
+
+---
+
+## Tips
+
+- Delete `~/.claude/settings.json` to avoid conflicts with profile-specific settings
+- Use `claude-native` tool for original Claude API, `claude` tool for switching between vendors
+
+---
+
+## License
+
+MIT
