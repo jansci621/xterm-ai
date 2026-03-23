@@ -53,7 +53,7 @@ export function ProfilePickerOverlay({
     <Box flexDirection="column" paddingX={1}>
       <Box justifyContent="space-between" marginBottom={1}>
         <Text color={colors.accent} bold>
-          xTerm
+          xTerm-AI
         </Text>
         <Text color={colors.muted}>Profile Picker</Text>
       </Box>

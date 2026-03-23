@@ -68,7 +68,7 @@ xterm-ai run claude --profile qianfan
  ─────────────────────────────────────────────────────────────────────────────────
 
  Tool       Claude CLI                   ok installed  · restored
- Profile    千帆                           · explicit
+ Profile    Qianfan                        · explicit
 
  ─────────────────────────────────────────────────────────────────────────────────
 
@@ -82,7 +82,7 @@ xterm-ai run claude --profile qianfan
 
  ─────────────────────────────────────────────────────────────────────────────────
 
-   ▶ Claude Native — claude-native
+   ▶ Claude Native — claude
      Claude CLI — claude (current)
      Codex CLI — codex
 
@@ -120,6 +120,25 @@ xterm-ai run claude --profile qianfan
  Profile     Qianfan
 
  Handing off terminal control…
+```
+
+### Setup (First Run)
+
+```
+ xTerm                                                                  Setup Required
+
+ ─────────────────────────────────────────────────────────────────────────────────
+
+ Configuration created.
+ A starter config has been written to ~/.xterm-ai/config.json
+ Create settings files in ~/.claude/ with your API keys:
+   • settings-native.json (Claude Native)
+   • settings-qianfan.json (Qianfan)
+ Then run xterm-ai again.
+
+ ─────────────────────────────────────────────────────────────────────────────────
+
+ [q] Quit
 ```
 
 ---

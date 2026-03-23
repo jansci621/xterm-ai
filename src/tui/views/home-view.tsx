@@ -63,7 +63,7 @@ export function HomeView({
       {/* ── Header ─────────────────────────────────────────────────────────── */}
       <Box justifyContent="space-between" marginBottom={1}>
         <Text color={colors.accent} bold>
-          xTerm
+          xTerm-AI
         </Text>
         <Text color={colors.muted}>Home</Text>
       </Box>
